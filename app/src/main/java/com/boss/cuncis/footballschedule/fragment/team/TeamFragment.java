@@ -3,15 +3,20 @@ package com.boss.cuncis.footballschedule.fragment.team;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v4.view.MenuItemCompat;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ProgressBar;
+import android.widget.SearchView;
 import android.widget.Spinner;
 import android.widget.Toast;
 
@@ -20,6 +25,7 @@ import com.boss.cuncis.footballschedule.model.League;
 import com.boss.cuncis.footballschedule.model.LeagueResponse;
 import com.boss.cuncis.footballschedule.model.Team;
 import com.boss.cuncis.footballschedule.model.TeamResponse;
+import com.miguelcatalan.materialsearchview.MaterialSearchView;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -40,6 +46,8 @@ public class TeamFragment extends Fragment implements TeamView {
 
     private List<Team> teams;
 
+    private View view;
+
     public TeamFragment() {
         // Required empty public constructor
     }
@@ -47,7 +55,7 @@ public class TeamFragment extends Fragment implements TeamView {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_team, container, false);
+        view = inflater.inflate(R.layout.fragment_team, container, false);
 
         spinner = view.findViewById(R.id.spinner);
         recyclerView = view.findViewById(R.id.recyclerview);
@@ -56,14 +64,16 @@ public class TeamFragment extends Fragment implements TeamView {
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
         teams = new ArrayList<>();
 
-
         presenter = new TeamPresenter(this);
 
-//        presenter.getAllTeams("4328");
         presenter.getAllLeague();
 
-
         return view;
+    }
+
+    private void setupSearch() {
+//        MaterialSearchView  searchView = view.findViewById(R.id.searchView);
+
     }
 
     @Override
@@ -119,4 +129,7 @@ public class TeamFragment extends Fragment implements TeamView {
     public void showError(String message) {
         Toast.makeText(getActivity(), "" + message, Toast.LENGTH_SHORT).show();
     }
+
+
+
 }

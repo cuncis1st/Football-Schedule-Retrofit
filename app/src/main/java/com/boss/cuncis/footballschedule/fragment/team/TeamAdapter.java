@@ -6,6 +6,8 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Filter;
+import android.widget.Filterable;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -13,9 +15,10 @@ import com.boss.cuncis.footballschedule.R;
 import com.boss.cuncis.footballschedule.model.Team;
 import com.squareup.picasso.Picasso;
 
+import java.util.ArrayList;
 import java.util.List;
 
-public class TeamAdapter extends RecyclerView.Adapter<TeamAdapter.TeamViewHolder> {
+public class TeamAdapter extends RecyclerView.Adapter<TeamAdapter.TeamViewHolder> implements Filterable {
 
     List<Team> teamList;
     Context context;
@@ -44,6 +47,37 @@ public class TeamAdapter extends RecyclerView.Adapter<TeamAdapter.TeamViewHolder
         return teamList.size();
     }
 
+    @Override
+    public Filter getFilter() {
+        return new Filter() {
+            @Override
+            protected FilterResults performFiltering(CharSequence charSequence) {
+                String charString = charSequence.toString();
+                if (charString.isEmpty()) {
+//                    teamListFiltered = teamList;
+                } else {
+                    List<Team> filteredList = new ArrayList<>();
+                    for (Team row: teamList) {
+                        if (row.getTeamName().toLowerCase().contains(charString.toLowerCase())) {
+                            filteredList.add(row);
+                        }
+                    }
+                    // still mistery
+                }
+                FilterResults filterResults = new FilterResults();
+                filterResults.values = teamList;
+
+                return filterResults;
+            }
+
+            @Override
+            protected void publishResults(CharSequence charSequence, FilterResults filterResults) {
+                teamList = (ArrayList<Team>) filterResults.values;
+                notifyDataSetChanged();
+            }
+        };
+    }
+
     class TeamViewHolder extends RecyclerView.ViewHolder {
 
         TextView tvTeamName;
@@ -55,4 +89,5 @@ public class TeamAdapter extends RecyclerView.Adapter<TeamAdapter.TeamViewHolder
             imgTeamLogo = itemView.findViewById(R.id.img_team_logo);
         }
     }
+
 }
