@@ -9,4 +9,33 @@
     <string name="favorite">Favorite</string>
     <string name="team">Team</string>
 
+    <string name="example_date">Sat, 26 Oct 2018</string>
+    <string name="example_team1">Home</string>
+    <string name="example_team2">Away</string>
+    <string name="vs">VS</string>
+    <string name="example_score1">0</string>
+    <string name="example_score2">0</string>
+    <string name="example_totalScore1">0</string>
+    <string name="example_totalScore2">0</string>
+    <string name="homegoaldetail">HomeGoalDetail</string>
+    <string name="awaygoaldetail">AwayGoalDetail</string>
+    <string name="shots">Shots</string>
+    <string name="lineups">Lineups</string>
+    <string name="goalkeeper">Goal Keeper</string>
+    <string name="home_keeper">Home Keeper</string>
+    <string name="away_keeper">Away Keeper</string>
+    <string name="goals">Goals</string>
+    <string name="defense">Defense</string>
+    <string name="midfield">Midfield</string>
+    <string name="forward">Forward</string>
+    <string name="substitutes">Substitutes</string>
+    <string name="home_lineup_defense">Home Lineup Defense</string>
+    <string name="away_lineup_defense">Away Lineup Defense</string>
+    <string name="home_lineup_midfield">Home Lineup Midfield</string>
+    <string name="away_lineup_midfield">Away Lineup Midfield</string>
+    <string name="home_lineup_forward">Home Lineup Forward</string>
+    <string name="away_lineup_forward">Away Lineup Forward</string>
+    <string name="home_lineup_substitutes">Home Lineup Substitutes</string>
+    <string name="away_lineup_substitutes">Away Lineup Substitutes</string>
+
 </resources>

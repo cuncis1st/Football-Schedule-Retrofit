@@ -1,6 +1,7 @@
 package com.boss.cuncis.footballschedule.fragment.match;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -9,6 +10,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.boss.cuncis.footballschedule.R;
+import com.boss.cuncis.footballschedule.fragment.match.detail.DetailMatchActivity;
 import com.boss.cuncis.footballschedule.model.Match;
 import com.boss.cuncis.footballschedule.utils.Utils;
 
@@ -55,6 +57,13 @@ public class MatchAdapter extends RecyclerView.Adapter<MatchAdapter.MatchViewHol
             tvHomeScore = itemView.findViewById(R.id.tv_home_score);
             tvAwayTeam = itemView.findViewById(R.id.tv_away_team);
             tvAwayScore = itemView.findViewById(R.id.tv_away_score);
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Intent i = new Intent(context, DetailMatchActivity.class);
+                    context.startActivity(i);
+                }
+            });
         }
     }
 }
