@@ -1,5 +1,6 @@
 package com.boss.cuncis.footballschedule.fragment.match;
 
+import com.boss.cuncis.footballschedule.model.DetailResponse;
 import com.boss.cuncis.footballschedule.model.Match;
 import com.boss.cuncis.footballschedule.model.MatchResponse;
 

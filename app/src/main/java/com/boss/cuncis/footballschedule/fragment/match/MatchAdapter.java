@@ -50,7 +50,7 @@ public class MatchAdapter extends RecyclerView.Adapter<MatchAdapter.MatchViewHol
     class MatchViewHolder extends RecyclerView.ViewHolder {
         TextView tvDate, tvHomeTeam, tvHomeScore, tvAwayTeam, tvAwayScore;
 
-        public MatchViewHolder(@NonNull View itemView) {
+        public MatchViewHolder(@NonNull final View itemView) {
             super(itemView);
             tvDate = itemView.findViewById(R.id.date);
             tvHomeTeam = itemView.findViewById(R.id.tv_home_team);
@@ -61,6 +61,9 @@ public class MatchAdapter extends RecyclerView.Adapter<MatchAdapter.MatchViewHol
                 @Override
                 public void onClick(View view) {
                     Intent i = new Intent(context, DetailMatchActivity.class);
+                    i.putExtra("KEY_EVENT_ID", matchList.get(getAdapterPosition()).getIdEvent());
+                    i.putExtra("KEY_HOME_TEAM_ID", matchList.get(getAdapterPosition()).getIdHomeTeam());
+                    i.putExtra("KEY_AWAY_TEAM_ID", matchList.get(getAdapterPosition()).getIdAwayTeam());
                     context.startActivity(i);
                 }
             });
