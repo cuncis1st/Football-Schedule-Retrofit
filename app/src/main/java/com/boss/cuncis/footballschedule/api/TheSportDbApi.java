@@ -28,4 +28,7 @@ public interface TheSportDbApi {
 
     @GET("api/v1/json/1/lookupteam.php")
     Call<TeamResponse> getTeamLogo(@Query("id") String id);
+
+    @GET("api/v1/json/1/lookupteam.php")
+    Call<TeamResponse> getTeamDetail(@Query("id") String id);
 }

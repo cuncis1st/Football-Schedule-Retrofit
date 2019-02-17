@@ -37,5 +37,13 @@
     <string name="away_lineup_forward">Away Lineup Forward</string>
     <string name="home_lineup_substitutes">Home Lineup Substitutes</string>
     <string name="away_lineup_substitutes">Away Lineup Substitutes</string>
+    <string name="title_activity_team_detail">TeamDetailActivity</string>
+    <string name="overview">Overview</string>
+    <string name="player">Player</string>
+    <string name="action_settings">Settings</string>
+    <string name="section_format">Hello World from section: %1$d</string>
+    <string name="overview_desc">Why I say old chap that is spiffing brolly Queen\'s English pear shaped baking cakes what a plonker gormless posh dropped a clanger he legged it hanky panky pukka owt to do with me mush squiffy faff about knees up skive off gutted mate the wireless burke tosser Elizabeth</string>
+    <string name="year">1945</string>
+    <string name="stadium">Stadium</string>
 
 </resources>

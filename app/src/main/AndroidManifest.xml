@@ -11,7 +11,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".fragment.match.detail.DetailMatchActivity"></activity>
+        <activity
+            android:name=".fragment.team.team_details.TeamDetailActivity"
+            android:label="@string/title_activity_team_detail"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity android:name=".fragment.match.detail.DetailMatchActivity" />
         <activity
             android:name=".MainActivity"
             android:label="@string/app_name">

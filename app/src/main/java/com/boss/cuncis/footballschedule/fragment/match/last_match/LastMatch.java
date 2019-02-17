@@ -35,8 +35,6 @@ public class LastMatch extends Fragment implements MatchView {
     private LastMatchPresenter presenter;
     private ProgressBar progressBar;
 
-    private SwipeRefreshLayout swipeRefreshLayout;
-
     public LastMatch() {
         // Required empty public constructor
     }
@@ -50,21 +48,12 @@ public class LastMatch extends Fragment implements MatchView {
         matches = new ArrayList<>();
         presenter = new LastMatchPresenter(this);
 
-        swipeRefreshLayout = view.findViewById(R.id.swipe);
         progressBar = view.findViewById(R.id.progressbar);
         recyclerView = view.findViewById(R.id.recyclerview);
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
         adapter = new MatchAdapter(matches, getActivity());
 
         presenter.getAllLastMatch();
-
-        swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
-            @Override
-            public void onRefresh() {
-                adapter.notifyDataSetChanged();
-                swipeRefreshLayout.setRefreshing(false);
-            }
-        });
 
         return view;
     }

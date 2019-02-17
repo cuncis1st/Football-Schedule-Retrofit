@@ -1,6 +1,7 @@
 package com.boss.cuncis.footballschedule.fragment.team;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -12,6 +13,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.boss.cuncis.footballschedule.R;
+import com.boss.cuncis.footballschedule.fragment.team.team_details.TeamDetailActivity;
 import com.boss.cuncis.footballschedule.model.Team;
 import com.squareup.picasso.Picasso;
 
@@ -87,6 +89,14 @@ public class TeamAdapter extends RecyclerView.Adapter<TeamAdapter.TeamViewHolder
             super(itemView);
             tvTeamName = itemView.findViewById(R.id.tv_team_name);
             imgTeamLogo = itemView.findViewById(R.id.img_team_logo);
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Intent i = new Intent(context, TeamDetailActivity.class);
+                    i.putExtra("KEY_TEAM_ID", teamList.get(getAdapterPosition()).getIdTeam());
+                    context.startActivity(i);
+                }
+            });
         }
     }
 
