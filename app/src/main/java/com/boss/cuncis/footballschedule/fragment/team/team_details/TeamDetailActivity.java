@@ -20,7 +20,7 @@ import com.boss.cuncis.footballschedule.R;
 import com.boss.cuncis.footballschedule.api.ApiClient;
 import com.boss.cuncis.footballschedule.api.TheSportDbApi;
 import com.boss.cuncis.footballschedule.fragment.team.team_details.overview.OverviewFragment;
-import com.boss.cuncis.footballschedule.fragment.team.team_details.overview.OverviewPresenter;
+import com.boss.cuncis.footballschedule.fragment.team.team_details.player.PlayerFragment;
 import com.boss.cuncis.footballschedule.model.TeamResponse;
 import com.squareup.picasso.Picasso;
 
@@ -54,6 +54,13 @@ public class TeamDetailActivity extends AppCompatActivity {
         Toast.makeText(this, "" + teamId, Toast.LENGTH_SHORT).show();
 
         getDetailToolbar(teamId);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+    }
+
+    @Override
+    public boolean onSupportNavigateUp() {
+        onBackPressed();
+        return true;
     }
 
     private void getDetailToolbar(String id) {
@@ -85,24 +92,24 @@ public class TeamDetailActivity extends AppCompatActivity {
     }
 
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_team_detail, menu);
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
-        }
-
-        return super.onOptionsItemSelected(item);
-    }
+//    @Override
+//    public boolean onCreateOptionsMenu(Menu menu) {
+//        // Inflate the menu; this adds items to the action bar if it is present.
+//        getMenuInflater().inflate(R.menu.menu_team_detail, menu);
+//        return true;
+//    }
+//
+//    @Override
+//    public boolean onOptionsItemSelected(MenuItem item) {
+//        int id = item.getItemId();
+//
+//        //noinspection SimplifiableIfStatement
+//        if (id == R.id.action_settings) {
+//            return true;
+//        }
+//
+//        return super.onOptionsItemSelected(item);
+//    }
 
 
     public class SectionsPagerAdapter extends FragmentPagerAdapter {

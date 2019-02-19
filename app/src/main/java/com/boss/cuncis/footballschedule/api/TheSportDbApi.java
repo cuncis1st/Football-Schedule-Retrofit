@@ -3,6 +3,8 @@ package com.boss.cuncis.footballschedule.api;
 import com.boss.cuncis.footballschedule.model.DetailResponse;
 import com.boss.cuncis.footballschedule.model.LeagueResponse;
 import com.boss.cuncis.footballschedule.model.MatchResponse;
+import com.boss.cuncis.footballschedule.model.PlayerDetailResponse;
+import com.boss.cuncis.footballschedule.model.PlayerResponse;
 import com.boss.cuncis.footballschedule.model.TeamResponse;
 
 import retrofit2.Call;
@@ -31,4 +33,24 @@ public interface TheSportDbApi {
 
     @GET("api/v1/json/1/lookupteam.php")
     Call<TeamResponse> getTeamDetail(@Query("id") String id);
+
+    @GET("api/v1/json/1/lookup_all_players.php")
+    Call<PlayerResponse> getPlayer(@Query("id") String id);
+
+    @GET("api/v1/json/1/lookupplayer.php")
+    Call<PlayerDetailResponse> getPlayerDetail(@Query("id") String playerId);
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+

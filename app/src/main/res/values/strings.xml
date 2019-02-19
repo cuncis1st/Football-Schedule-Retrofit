@@ -45,5 +45,10 @@
     <string name="overview_desc">Why I say old chap that is spiffing brolly Queen\'s English pear shaped baking cakes what a plonker gormless posh dropped a clanger he legged it hanky panky pukka owt to do with me mush squiffy faff about knees up skive off gutted mate the wireless burke tosser Elizabeth</string>
     <string name="year">1945</string>
     <string name="stadium">Stadium</string>
+    <string name="position">Position</string>
+    <string name="weight_kg">Weight (Kg)</string>
+    <string name="height_m">Height (m)</string>
+    <string name="weight_number">50.50</string>
+    <string name="height_number">1.71</string>
 
 </resources>
