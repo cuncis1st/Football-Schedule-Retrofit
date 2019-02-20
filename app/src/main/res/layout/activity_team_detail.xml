@@ -26,41 +26,43 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical">
+                android:orientation="vertical"
+                android:layout_marginRight="50dp"
+                android:layout_marginEnd="50dp">
 
                 <ImageView
+                    android:id="@+id/img_logo_toolbar"
                     android:layout_width="wrap_content"
                     android:layout_height="100dp"
-                    android:id="@+id/img_logo_toolbar"
                     android:layout_gravity="center"
-                    android:src="@drawable/ic_launcher_background"/>
+                    android:src="@drawable/ic_launcher_background" />
 
                 <TextView
+                    android:id="@+id/tv_team_name_toolbar"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:id="@+id/tv_team_name_toolbar"
                     android:text="@string/team"
                     android:textAlignment="center"
-                    android:textSize="22sp"
-                    android:textColor="@android:color/white"/>
+                    android:textColor="@android:color/white"
+                    android:textSize="22sp" />
 
                 <TextView
+                    android:id="@+id/tv_team_year_toolbar"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:id="@+id/tv_team_year_toolbar"
                     android:text="@string/year"
                     android:textAlignment="center"
-                    android:textSize="18sp"
-                    android:textColor="@android:color/white"/>
+                    android:textColor="@android:color/white"
+                    android:textSize="18sp" />
 
                 <TextView
+                    android:id="@+id/tv_team_stadium_toolbar"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:id="@+id/tv_team_stadium_toolbar"
                     android:text="@string/stadium"
                     android:textAlignment="center"
-                    android:textSize="20sp"
-                    android:textColor="@android:color/white"/>
+                    android:textColor="@android:color/white"
+                    android:textSize="20sp" />
             </LinearLayout>
 
         </android.support.v7.widget.Toolbar>

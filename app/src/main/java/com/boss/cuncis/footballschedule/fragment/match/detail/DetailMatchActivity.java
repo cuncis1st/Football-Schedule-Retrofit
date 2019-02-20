@@ -3,6 +3,8 @@ package com.boss.cuncis.footballschedule.fragment.match.detail;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
@@ -38,6 +40,11 @@ public class DetailMatchActivity extends AppCompatActivity implements DetailView
     String homeId;
     String awayId;
 
+    private boolean isAdded = false;
+    private MenuItem addToFavorite;
+    private MenuItem removeFavorite;
+    private Menu mMenu;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -60,7 +67,7 @@ public class DetailMatchActivity extends AppCompatActivity implements DetailView
     }
 
     private void initListener() {
-        tvDate.setText(details.get(0).getDateEvent());
+        tvDate.setText(Utils.getDate(details.get(0).getDateEvent()));
         tvHomeTeam.setText(details.get(0).getStrHomeTeam());
         tvAwayTeam.setText(details.get(0).getStrAwayTeam());
         tvHomeScore.setText(details.get(0).getIntHomeScore());
@@ -104,6 +111,27 @@ public class DetailMatchActivity extends AppCompatActivity implements DetailView
         tvAwayForward = findViewById(R.id.tv_awayLineupForward);
         tvHomeSubtitutes = findViewById(R.id.tv_homeLineupSubstitutes);
         tvAwaySubtitutes = findViewById(R.id.tv_awayLineupSubstitutes);
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.favorite_menu, menu);
+        return super.onCreateOptionsMenu(menu);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        if (isAdded) {
+            item.setIcon(R.drawable.ic_favorite_border);
+            isAdded = false;
+            Toast.makeText(this, "Remove from Favorite", Toast.LENGTH_SHORT).show();
+        } else {
+            item.setIcon(R.drawable.ic_favorite);
+            isAdded = true;
+            Toast.makeText(this, "Added to Favorite", Toast.LENGTH_SHORT).show();
+        }
+
+        return super.onOptionsItemSelected(item);
     }
 
     @Override
